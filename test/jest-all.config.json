@@ -1,0 +1,19 @@
+{
+  "rootDir": "../src",
+  "globals": {
+    "ts-jest": {
+      "tsconfig": "tsconfig.json"
+    }
+  },
+  "moduleFileExtensions": [
+    "ts",
+    "json",
+    "js"
+  ],
+  "transform": {
+    "^.+\\.(ts|tsx)$": "ts-jest"
+  },
+  "testRegex": "\\.(integration-|component-)?test.ts$",
+  "testEnvironment": "node",
+  "collectCoverage": false
+}

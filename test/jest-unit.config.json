@@ -1,0 +1,36 @@
+{
+  "rootDir": "../src",
+  "globals": {
+    "ts-jest": {
+      "tsconfig": "tsconfig.json"
+    }
+  },
+  "moduleFileExtensions": [
+    "ts",
+    "json",
+    "js"
+  ],
+  "transform": {
+    "^.+\\.(ts|tsx)$": "ts-jest"
+  },
+  "testRegex": "\\.test.ts$",
+  "testEnvironment": "node",
+  "collectCoverage": true,
+  "collectCoverageFrom": [
+    "../src/**/*.{ts,tsx,js,jsx}",
+    "!../**/node_modules/**",
+    "!../**/vendor/**"
+  ],
+  "coverageDirectory": "../target/unit",
+  "coverageReporters": [
+    [
+      "html",
+      {
+        "subdir": "coverage_html"
+      }
+    ],
+    "clover",
+    "text",
+    "text-summary"
+  ]
+}
