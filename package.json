@@ -2,7 +2,7 @@
   "name": "serverless-node-template",
   "version": "1.0.0",
   "description": "Template to build customizable, flexible and well documented APIs with Node.js and Express.",
-  "main": "index.ts",
+  "main": "dist/server.js",
   "repository": "git@github.com:andersoncontreira/serverless-node-template.git",
   "author": "Anderson Contreira <anderson.contreira@gmail.com>",
   "license": "MIT",
@@ -32,6 +32,7 @@
     "dotenv": "^16.0.1",
     "express": "^4.18.1",
     "express-session": "^1.17.3",
+    "supertest": "^6.2.3",
     "ts-jest": "^28.0.5",
     "winston": "^3.7.2"
   },
@@ -52,7 +53,6 @@
     "nodemon": "^2.0.7",
     "prettier": "^2.7.1",
     "sucrase": "^3.17.0",
-    "supertest": "^6.2.3",
     "typescript": "^4.1.3"
   }
 }

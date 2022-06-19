@@ -15,3 +15,11 @@ export function getEnvironment() {
 
   return environment;
 }
+
+export function logRoutes(app, logger) {
+  app._router.stack.forEach((r) => {
+    if (r.route && r.route.path) {
+      logger.info(`Route: ${r.route.stack[0].method.toUpperCase()} ${r.route.path}`);
+    }
+  });
+}
