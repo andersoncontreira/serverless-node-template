@@ -16,6 +16,7 @@ const constants = {} as ProjectConstantsType;
 const projectrc = `${process.cwd()}/.projectrc`;
 let projectVars = {} as ProjectRCType<string>;
 
+// console.log(projectrc)
 if (fs.existsSync(projectrc)) {
   projectVars = dotenv.parse(Buffer.from(fs.readFileSync(projectrc))) as ProjectRCType<string>;
 }

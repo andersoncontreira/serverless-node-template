@@ -3,9 +3,9 @@ import compression from 'compression'; // compresses requests
 import cors from 'cors';
 import bodyParser from 'body-parser';
 import { getEnvironment, logRoutes } from './application/helpers';
-import { AppController } from './application/http/controllers/app-controller';
 import { loadEnv } from './boot';
 import getLogger from './application/logging';
+import OpenApi from "./application/openapi/openapi";
 
 // logger
 const logger = getLogger();
@@ -13,7 +13,9 @@ const logger = getLogger();
 loadEnv();
 // get the environment name
 const env = getEnvironment();
-
+// router
+const router = express.Router();
+// Express App
 const app = express();
 app.set('APP_PORT', process.env.APP_PORT || 3000);
 app.set('APP_ENV', env || 'development');
@@ -22,10 +24,18 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cors());
 
-// app.enableCors();
-app.get('/', AppController.index);
-// SwaggerSpec.generateDocs(app);
+// OpenAPI features
+OpenApi.configure();
+OpenApi.initialize(app)
+.then((result) => {
 
-logRoutes(app, logger);
+  // prepare documentation endpoint
+  OpenApi.route(app);
+
+  // log the routes
+  logRoutes(app, router, logger);
+
+})
+
 
 export default app;

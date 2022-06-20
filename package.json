@@ -6,8 +6,12 @@
   "repository": "git@github.com:andersoncontreira/serverless-node-template.git",
   "author": "Anderson Contreira <anderson.contreira@gmail.com>",
   "license": "MIT",
+  "engines": {
+    "node": ">=12"
+  },
   "scripts": {
-    "build": "sucrase ./src -d ./dist --transforms typescript,imports",
+    "copy:dependencies": "./scripts/copy-dependencies.sh",
+    "build": "sucrase ./src -d ./dist --transforms typescript,imports && ./scripts/copy-dependencies.sh",
     "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
     "start": "sucrase-node src/server.ts",
     "start:dev": "APPLICATION_ENV='development' nodemon src/server.ts --watch",
@@ -31,9 +35,13 @@
     "cors": "^2.8.5",
     "dotenv": "^16.0.1",
     "express": "^4.18.1",
+    "express-openapi": "^12.0.0",
     "express-session": "^1.17.3",
+    "jest": "^28.1.1",
     "supertest": "^6.2.3",
+    "swagger-ui-express": "^4.4.0",
     "ts-jest": "^28.0.5",
+    "ts-node": "^10.8.1",
     "winston": "^3.7.2"
   },
   "devDependencies": {
@@ -48,7 +56,6 @@
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-import": "^2.26.0",
     "eslint-plugin-prettier": "^4.0.0",
-    "jest": "^28.1.1",
     "node-mocks-http": "^1.11.0",
     "nodemon": "^2.0.7",
     "prettier": "^2.7.1",

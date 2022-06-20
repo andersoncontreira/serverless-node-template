@@ -16,10 +16,17 @@ export function getEnvironment() {
   return environment;
 }
 
-export function logRoutes(app, logger) {
+export function logRoutes(app, router, logger) {
   app._router.stack.forEach((r) => {
     if (r.route && r.route.path) {
-      logger.info(`Route: ${r.route.stack[0].method.toUpperCase()} ${r.route.path}`);
+      logger.info(`App Route: ${r.route.stack[0].method.toUpperCase()} ${r.route.path}`);
     }
   });
+
+  router.stack.forEach((r) => {
+    if (r.route && r.route.path) {
+      logger.info(`Router: ${r.route.stack[0].method.toUpperCase()} ${r.route.path}`);
+    }
+  });
+
 }
