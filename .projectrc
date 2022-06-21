@@ -1,5 +1,5 @@
 APP_NAME=serverless-node-template
-APP_DESCRIPTION=Template to build customizable, flexible and well documented APIs with Node.js and Express.
+APP_DESCRIPTION="Template to build customizable, flexible and well documented APIs with Node.js and Express."
 APP_AUTHOR="Anderson Contreira"
 APP_AUTHOR_EMAIL=anderson.contreira@gmail.com
 APP_REPOSITORY=https://github.com/andersoncontreira/serverless-node-template

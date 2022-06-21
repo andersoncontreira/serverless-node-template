@@ -11,6 +11,7 @@
   },
   "scripts": {
     "copy:dependencies": "./scripts/copy-dependencies.sh",
+    "guidelines": "./scripts/guidelines-checker.py",
     "build": "sucrase ./src -d ./dist --transforms typescript,imports && ./scripts/copy-dependencies.sh",
     "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
     "start": "sucrase-node src/server.ts",

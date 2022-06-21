@@ -17,7 +17,7 @@ services:
       - "redis"
       - "mysql"
     ports:
-      - 3000:3000
+      - "3000:3000"
     networks:
       - service-node-v1
     volumes:
@@ -25,7 +25,7 @@ services:
   redis:
     image: "redis:alpine"
     ports:
-      - 6379:6379
+      - "6379:6379"
     expose:
       - 6379
     networks:

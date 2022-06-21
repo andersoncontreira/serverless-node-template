@@ -93,9 +93,9 @@ Execute the follow command:
 ```
 
 ### Running locally
-To create `venv` and install the modules, run:
+To install the modules, execute the follow command:
 ```bash
-yarn add
+yarn install
 ```
 #### Executing only the HTTP framework
 Execute the follow command:
