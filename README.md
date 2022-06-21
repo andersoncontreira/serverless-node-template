@@ -1,4 +1,4 @@
-# serverless-node-template
+# serverless-node-template  (Work in progress...)
 Template to build customizable, flexible and well documented APIs with Node.js and Express.
 
 [//]: # ([![linting: pylint]&#40;https://img.shields.io/badge/linting-pylint-yellowgreen&#41;]&#40;https://github.com/PyCQA/pylint&#41;)
