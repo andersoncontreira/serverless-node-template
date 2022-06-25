@@ -4,20 +4,25 @@ import getLogger from '../logging';
 import { CUSTOM_DEFAULT_HEADERS } from './helpers';
 
 export class ApiResponse {
-  private response: Response;
+  protected response: Response;
 
-  private logger: Logger = null;
+  protected logger: Logger = null;
 
-  private hateos = true;
+  protected hateos = true;
 
-  private statusCode = 200;
+  protected statusCode = 200;
 
-  private headers: any;
+  protected headers: any;
+  protected data: object;
 
   constructor(response: Response, logger: Logger) {
     this.response = response;
     this.logger = logger != null ? logger : getLogger();
     this.headers = CUSTOM_DEFAULT_HEADERS;
+  }
+
+  setData(data: object) {
+    this.data = data;
   }
 
   json() {
