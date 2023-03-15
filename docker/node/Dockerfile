@@ -31,7 +31,8 @@ RUN pip --no-cache-dir install --upgrade awscli
 # Install app dependencies
 # A wildcard is used to ensure both package.json AND package-lock.json are copied
 # where available (npm@5+)
-COPY package*.json /app
+COPY package.json /app
+COPY yarn.lock /app
 
 # Install requirements
 RUN yarn install
